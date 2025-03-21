@@ -1,9 +1,9 @@
 <template>
     <NuxtLayout>
         <v-app>
-            <TheSidebar />
+            <TheNavbar />
 
-            <v-main>
+            <v-main class="mt-5">
                 <NuxtPage />
             </v-main>
         </v-app>

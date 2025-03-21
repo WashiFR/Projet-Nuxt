@@ -3,10 +3,13 @@
 </script>
 
 <template>
-    <div>
-        <h1 class="text-h1">Home Page</h1>
-
-        <v-btn prepend-icon="$vuetify">Test</v-btn>
+    <div class="pl-16 pr-16">
+        <h1 class="mb-2">Liste des forums</h1>
+        <div class="d-flex flex-column align-center ga-5">
+            <card-forum />
+            <card-forum />
+            <card-forum />
+        </div>
     </div>
 </template>
 
