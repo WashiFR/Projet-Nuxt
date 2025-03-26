@@ -1,7 +1,7 @@
 # Pré-requis techniques
 
 - [x] Installation de Nuxt.js
-- [x] Installation de Vuetify 3
+- [x] Installation de PrimeVue
 - [ ] Installation de serveur Nuxt
 - [ ] Installation de WebSocket
 - [ ] Création de la base de données MySQL
