@@ -1,15 +1,11 @@
 <script setup lang="ts">
 
+import ForumCard from "~/components/ForumCard.vue";
 </script>
 
 <template>
-    <div class="pl-16 pr-16">
-        <h1 class="mb-2">Liste des forums</h1>
-        <div class="d-flex flex-column align-center ga-5">
-            <card-forum />
-            <card-forum />
-            <card-forum />
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <ForumCard v-for="i in 11" :key="i" />
     </div>
 </template>
 

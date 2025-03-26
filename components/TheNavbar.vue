@@ -1,18 +1,34 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-    <v-toolbar class="px-5" color="white" border app>
-        <v-img src="/images/v-logo.svg" max-width="50" class="mr-3"></v-img>
-        <span class="text-h6 font-weight-medium">Nuxt Projet</span>
-
-        <v-spacer></v-spacer>
-
-        <v-btn class="text-none" variant="outlined" base-color="blue-darken-3" append-icon="mdi-login">Login</v-btn>
-    </v-toolbar>
+    <nav class="p-4 pb-0 mb-4 sticky top-0 backdrop-blur-xs z-10">
+        <Menubar class="navbar">
+            <template #start>
+                <a href="/" class="flex items-center">
+                    <Image src="/images/raditz_dbz.png" alt="logo" width="50" />
+                    <Image src="/images/Radditz_logo.png" alt="logo" width="100" />
+                </a>
+            </template>
+            <template #end>
+                <div class="flex items-center">
+                    <div class="flex items-center gap-2">
+                        <Button label="Sujet" icon="pi pi-plus" variant="text" severity="secondary" />
+                        <Button icon="pi pi-cog" variant="text" severity="secondary" />
+                    </div>
+                    <Divider layout="vertical" />
+                    <Button label="Login" icon="pi pi-sign-in" />
+                </div>
+            </template>
+        </Menubar>
+    </nav>
 </template>
 
 <style scoped>
+@reference "tailwindcss/theme";
 
+:deep(.navbar) {
+    @apply border-gray-500 rounded-xl
+}
 </style>
+
+<script setup lang="ts">
+
+</script>

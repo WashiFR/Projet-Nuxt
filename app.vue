@@ -1,12 +1,12 @@
 <template>
     <NuxtLayout>
-        <v-app>
-            <TheNavbar />
 
-            <v-main class="mt-5">
-                <NuxtPage />
-            </v-main>
-        </v-app>
+        <TheNavbar />
+
+        <main class="flex flex-col items-center">
+            <NuxtPage />
+        </main>
+
     </NuxtLayout>
 </template>
 <script setup lang="ts">
