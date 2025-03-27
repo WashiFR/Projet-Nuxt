@@ -1,6 +1,12 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const loginDialogVisible = ref(false);
+</script>
+
 <template>
     <nav class="mb-4 sticky top-0 z-10">
-        <Menubar class="navbar">
+        <Menubar pt:root:class="border-0 rounded-none border-b-1 border-gray-200">
             <template #start>
                 <a href="/" class="flex items-center">
                     <Image src="/images/raditz_dbz.png" alt="logo" width="50" />
@@ -14,21 +20,15 @@
                         <Button icon="pi pi-cog" variant="text" severity="secondary" />
                     </div>
                     <Divider layout="vertical" />
-                    <Button label="Login" icon="pi pi-sign-in" />
+                    <Button label="Login" icon="pi pi-user" @click="loginDialogVisible = true" />
                 </div>
             </template>
         </Menubar>
+
+        <LoginDialog :isVisible="loginDialogVisible" v-model:visible="loginDialogVisible" />
     </nav>
 </template>
 
 <style scoped>
-@reference "tailwindcss/theme";
 
-:deep(.navbar) {
-    @apply border-0 rounded-none border-b-1 border-gray-200
-}
 </style>
-
-<script setup lang="ts">
-
-</script>
