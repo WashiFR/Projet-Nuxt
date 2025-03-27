@@ -5,6 +5,10 @@
 * Pailler Romain
 * Weier Loris
 
+## Structure de la base de données
+
+[https://drawsql.app/teams/test-4619/diagrams/projet-nuxt](https://drawsql.app/teams/test-4619/diagrams/projet-nuxt)
+
 ## Description du projet
 
 L’objectif de ce projet est de réaliser une application complète utilisant Nuxt.JS. 
