@@ -17,7 +17,6 @@
             <template #footer>
                 <Divider />
                 <div class="flex items-center justify-between text-xs">
-                    <p>35K membres</p>
                     <p>15 sujets</p>
                 </div>
             </template>

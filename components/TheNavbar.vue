@@ -1,5 +1,5 @@
 <template>
-    <nav class="p-4 pb-0 mb-4 sticky top-0 backdrop-blur-xs z-10">
+    <nav class="mb-4 sticky top-0 z-10">
         <Menubar class="navbar">
             <template #start>
                 <a href="/" class="flex items-center">
@@ -25,7 +25,7 @@
 @reference "tailwindcss/theme";
 
 :deep(.navbar) {
-    @apply border-gray-500 rounded-xl
+    @apply border-0 rounded-none border-b-1 border-gray-200
 }
 </style>
 
