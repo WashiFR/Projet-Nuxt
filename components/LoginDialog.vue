@@ -25,8 +25,14 @@ function closeDialog() {
                 <h2 class="text-4xl font-bold">Connexion</h2>
             </div>
             <div class="flex flex-col gap-4">
-                <InputText placeholder="Username" />
-                <InputText placeholder="Password" />
+                <IconField>
+                    <InputIcon class="pi pi-at" />
+                    <InputText placeholder="Email" fluid />
+                </IconField>
+                <IconField>
+                    <InputIcon class="pi pi-lock" />
+                    <Password placeholder="Password" :feedback="false" toggleMask fluid />
+                </IconField>
                 <Button label="Se connecter" />
                 <Divider layout="horizontal" align="center">
                     <b>Pas de compte ?</b>
