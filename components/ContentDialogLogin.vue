@@ -46,11 +46,11 @@ function openRegisterDialog() {
         <div class="flex flex-col gap-4">
             <IconField>
                 <InputIcon class="pi pi-at" />
-                <InputText placeholder="Email" fluid />
+                <InputText placeholder="Email" fluid autofocus />
             </IconField>
             <IconField>
                 <InputIcon class="pi pi-lock" />
-                <Password placeholder="Password" :feedback="false" toggleMask fluid />
+                <Password placeholder="Mot de passe" :feedback="false" toggleMask fluid />
             </IconField>
             <Button label="Se connecter" />
             <Divider layout="horizontal" align="center">

@@ -51,7 +51,7 @@ function openLoginDialog() {
         <div class="flex flex-col gap-4">
             <IconField>
                 <InputIcon class="pi pi-user" />
-                <InputText placeholder="Nom d'utilisateur" fluid />
+                <InputText placeholder="Nom d'utilisateur" fluid autofocus />
             </IconField>
             <IconField>
                 <InputIcon class="pi pi-at" />
@@ -59,7 +59,7 @@ function openLoginDialog() {
             </IconField>
             <IconField>
                 <InputIcon class="pi pi-lock" />
-                <Password placeholder="Password" :feedback="false" toggleMask fluid />
+                <Password placeholder="Mot de passe" toggleMask fluid />
             </IconField>
             <Button label="S'inscrire" />
             <Divider layout="horizontal" align="center">
