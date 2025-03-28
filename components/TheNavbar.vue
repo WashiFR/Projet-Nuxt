@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import ContentDialogLogin from "~/components/ContentDialogLogin.vue";
+import ContentDialogRegister from "~/components/ContentDialogRegister.vue";
 
-const loginDialogVisible = ref(false);
+const dialogVisible = ref(false);
+const contentDialogLoginVisible = ref(true);
+const contentDialogRegisterVisible = ref(false);
 </script>
 
 <template>
@@ -20,12 +24,27 @@ const loginDialogVisible = ref(false);
                         <Button icon="pi pi-cog" variant="text" severity="secondary" />
                     </div>
                     <Divider layout="vertical" />
-                    <Button label="Login" icon="pi pi-user" @click="loginDialogVisible = true" />
+                    <Button label="Login" icon="pi pi-user" @click="dialogVisible = true" />
                 </div>
             </template>
         </Menubar>
 
-        <LoginDialog :isVisible="loginDialogVisible" v-model:visible="loginDialogVisible" />
+        <Dialog v-model:visible="dialogVisible" modal :style="{ width: '25rem', padding: '2rem' }">
+            <template #container>
+                <ContentDialogLogin
+                    v-if="contentDialogLoginVisible"
+                    v-model:visible="contentDialogLoginVisible"
+                    v-model:registerDialogVisible="contentDialogRegisterVisible"
+                    v-model:dialog-visible="dialogVisible"
+                />
+                <ContentDialogRegister
+                    v-if="contentDialogRegisterVisible"
+                    v-model:visible="contentDialogRegisterVisible"
+                    v-model:loginDialogVisible="contentDialogLoginVisible"
+                    v-model:dialog-visible="dialogVisible"
+                />
+            </template>
+        </Dialog>
     </nav>
 </template>
 
