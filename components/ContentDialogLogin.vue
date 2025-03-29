@@ -1,44 +1,13 @@
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
+import { useDialogLogin } from '~/composables/useDialogLogin'
 
-const props = defineProps({
-    visible: {
-        type: Boolean,
-        required: true
-    },
-    registerDialogVisible: {
-        type: Boolean,
-        required: true
-    },
-    dialogVisible: {
-        type: Boolean,
-        required: true
-    }
-});
-
-const emit = defineEmits([
-    'update:visible',
-    'update:registerDialogVisible',
-    'update:dialogVisible'
-]);
-
-/**
- * Ferme la boîte de dialogue
- */
-function closeDialog() {
-    emit('update:dialogVisible', false);
-}
-
-function openRegisterDialog() {
-    emit('update:visible', false);
-    emit('update:registerDialogVisible', true);
-}
+const dialogLogin = useDialogLogin()
 </script>
 
 <template>
     <div>
         <div class="absolute right-0 top-0 p-2">
-            <Button icon="pi pi-times" severity="secondary" variant="text" rounded @click="closeDialog" />
+            <Button icon="pi pi-times" severity="secondary" variant="text" rounded @click="dialogLogin.closeDialog()" />
         </div>
         <div class="flex justify-center mb-4">
             <h2 class="text-4xl font-bold">Connexion</h2>
@@ -56,7 +25,7 @@ function openRegisterDialog() {
             <Divider layout="horizontal" align="center">
                 <b>Pas de compte ?</b>
             </Divider>
-            <Button label="S'inscrire" severity="secondary" variant="outlined" @click="openRegisterDialog" />
+            <Button label="S'inscrire" severity="secondary" variant="outlined" @click="dialogLogin.openRegisterDialog()" />
         </div>
     </div>
 </template>

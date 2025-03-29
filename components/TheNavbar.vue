@@ -1,13 +1,9 @@
 <script setup lang="ts">
+import {useDialogLogin} from "~/composables/useDialogLogin";
 import { ref } from 'vue';
-import ContentDialogLogin from "~/components/ContentDialogLogin.vue";
-import ContentDialogRegister from "~/components/ContentDialogRegister.vue";
 
 const isLogged = ref(false);
-
-const dialogVisible = ref(false);
-const contentDialogLoginVisible = ref(true);
-const contentDialogRegisterVisible = ref(false);
+const dialogLogin = useDialogLogin();
 </script>
 
 <template>
@@ -27,30 +23,13 @@ const contentDialogRegisterVisible = ref(false);
                         <Button icon="pi pi-cog" variant="text" severity="secondary" rounded />
                     </div>
                     <Divider layout="vertical" />
-                    <Button v-if="!isLogged" label="Connexion" icon="pi pi-user" @click="dialogVisible = true" />
+                    <Button v-if="!isLogged" label="Connexion" icon="pi pi-user" @click="dialogLogin.openLoginDialog()" />
                     <Button v-if="isLogged" variant="text" severity="secondary" rounded class="btn-avatar">
                         <Avatar v-if="isLogged" icon="pi pi-user" shape="circle" />
                     </Button>
                 </div>
             </template>
         </Menubar>
-
-        <Dialog v-model:visible="dialogVisible" modal :style="{ width: '25rem', padding: '2rem' }">
-            <template #container>
-                <ContentDialogLogin
-                    v-if="contentDialogLoginVisible"
-                    v-model:visible="contentDialogLoginVisible"
-                    v-model:registerDialogVisible="contentDialogRegisterVisible"
-                    v-model:dialog-visible="dialogVisible"
-                />
-                <ContentDialogRegister
-                    v-if="contentDialogRegisterVisible"
-                    v-model:visible="contentDialogRegisterVisible"
-                    v-model:loginDialogVisible="contentDialogLoginVisible"
-                    v-model:dialog-visible="dialogVisible"
-                />
-            </template>
-        </Dialog>
     </nav>
 </template>
 
