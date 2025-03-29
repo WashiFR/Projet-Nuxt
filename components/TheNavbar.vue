@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import {useDialogLogin} from "~/composables/useDialogLogin";
+import {useAuth} from "~/composables/useAuth";
 import { ref } from 'vue';
+import MenuUser from "~/components/MenuUser.vue";
 
-const isLogged = ref(false);
 const dialogLogin = useDialogLogin();
+const auth = useAuth();
+
+const userMenu = ref()
+
+const toggleMenu = (event: Event) => {
+    userMenu.value?.menu.toggle(event)
+};
+
 </script>
 
 <template>
@@ -17,16 +26,19 @@ const dialogLogin = useDialogLogin();
                 </a>
             </template>
             <template #end>
-                <div class="flex items-center">
+                <div v-if="!auth.isAuthenticated.value" class="flex items-center">
+                    <Button label="Connexion" icon="pi pi-user" @click="dialogLogin.openLoginDialog()" />
+                </div>
+                <div v-else class="flex items-center">
                     <div class="flex items-center gap-2">
-                        <Button v-if="isLogged" label="Sujet" icon="pi pi-plus" variant="text" severity="secondary" rounded />
-                        <Button icon="pi pi-cog" variant="text" severity="secondary" rounded />
+                        <Button label="Sujet" icon="pi pi-plus" variant="text" severity="secondary" rounded />
                     </div>
                     <Divider layout="vertical" />
-                    <Button v-if="!isLogged" label="Connexion" icon="pi pi-user" @click="dialogLogin.openLoginDialog()" />
-                    <Button v-if="isLogged" variant="text" severity="secondary" rounded class="btn-avatar">
-                        <Avatar v-if="isLogged" icon="pi pi-user" shape="circle" />
+                    <Button variant="text" severity="secondary" rounded class="btn-avatar" @click="toggleMenu">
+                        <Avatar icon="pi pi-user" shape="circle" />
                     </Button>
+
+                    <MenuUser ref="userMenu" />
                 </div>
             </template>
         </Menubar>

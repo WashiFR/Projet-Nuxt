@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useDialogLogin } from '~/composables/useDialogLogin'
+import { useAuth } from '~/composables/useAuth'
 
 const dialogLogin = useDialogLogin()
+const auth = useAuth()
 </script>
 
 <template>
@@ -21,7 +23,7 @@ const dialogLogin = useDialogLogin()
                 <InputIcon class="pi pi-lock" />
                 <Password placeholder="Mot de passe" :feedback="false" toggleMask fluid />
             </IconField>
-            <Button label="Se connecter" />
+            <Button label="Se connecter" @click="auth.login(); dialogLogin.closeDialog()" />
             <Divider layout="horizontal" align="center">
                 <b>Pas de compte ?</b>
             </Divider>
