@@ -1,14 +1,27 @@
 <script setup lang="ts">
+const name = "Forum Card";
+
+/**
+ * Convertit un nom en slug pour l'URL
+ * @example nameToSlug("Forum Card") => "forum-card"
+ * @param name Le nom à convertir
+ */
+function nameToSlug(name: string) {
+    return name
+        .toLowerCase()
+        .replace(/ /g, "-")
+        .replace(/[^\w-]+/g, "");
+}
 
 </script>
 
 <template>
-    <div class="forum-card">
+    <NuxtLink :to="`/forums/${nameToSlug(name)}`" class="forum-card">
         <Card style="width: 20rem; overflow: hidden">
             <template #header>
                 <img alt="forum header" src="/images/usercard.jpg" class="h-[125px] w-full object-cover" />
             </template>
-            <template #title>Forum Card</template>
+            <template #title>{{name}}</template>
             <template #content>
                 <p class="m-0 text-sm">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis
@@ -21,7 +34,7 @@
                 </div>
             </template>
         </Card>
-    </div>
+    </NuxtLink>
 </template>
 
 <style scoped>

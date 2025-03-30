@@ -9,13 +9,12 @@ import GlobalDialogLogin from "~/components/GlobalDialogLogin.vue";
 
         <TheNavbar />
 
-        <main class="flex flex-col items-center">
-            <NuxtPage />
-        </main>
+        <!-- Main content -->
+        <NuxtPage />
 
         <TheFooter />
 
-        <!-- Global Components -->
+        <!-- Globals Components -->
         <GlobalDialogLogin />
 
     </NuxtLayout>
