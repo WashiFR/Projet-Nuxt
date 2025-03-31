@@ -23,11 +23,14 @@ CREATE TABLE `messages`(
     `id_author` BIGINT NOT NULL
 );
 CREATE TABLE `users`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `id` CHAR(36) NOT NULL,
+    `role` INT NOT NULL DEFAULT '0' COMMENT '0 -> User /
+1 -> Admin',
     `username` VARCHAR(255) NOT NULL,
     `email` VARCHAR(255) NOT NULL,
     `password` VARCHAR(255) NOT NULL,
-    `avatar` VARCHAR(255) NULL
+    `avatar` VARCHAR(255) NULL,
+    PRIMARY KEY(`id`)
 );
 ALTER TABLE
     `subjects` ADD CONSTRAINT `subjects_id_forum_foreign` FOREIGN KEY(`id_forum`) REFERENCES `forums`(`id`);

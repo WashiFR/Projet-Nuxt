@@ -2,10 +2,11 @@
 import TheNavbar from "~/components/TheNavbar.vue";
 import TheFooter from "~/components/TheFooter.vue";
 import GlobalDialogLogin from "~/components/GlobalDialogLogin.vue";
+import GlobalDialogUserProfile from "~/components/GlobalDialogUserProfile.vue";
 </script>
 
 <template>
-    <NuxtLayout>
+    <div class="flex flex-col min-h-screen">
 
         <TheNavbar />
 
@@ -16,6 +17,7 @@ import GlobalDialogLogin from "~/components/GlobalDialogLogin.vue";
 
         <!-- Globals Components -->
         <GlobalDialogLogin />
+        <GlobalDialogUserProfile />
 
-    </NuxtLayout>
+    </div>
 </template>

@@ -10,6 +10,8 @@
 # Fonctionnalités principales
 
 - [ ] Actualisation en temps réel des sujets et des messages
+- [ ] Création de la bd MySQL au démarrage
+- [ ] Création d'un compte `admin` au démarrage
 
 ## Pages
 

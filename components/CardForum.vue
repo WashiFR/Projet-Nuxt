@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const name = "Forum Card";
+const name = "Nom du forum";
 
 /**
  * Convertit un nom en slug pour l'URL
