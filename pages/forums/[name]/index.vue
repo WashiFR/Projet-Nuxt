@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-import CardForum from "~/components/CardForum.vue";
 
 const route = useRoute();
 const forumName = route.params.name;

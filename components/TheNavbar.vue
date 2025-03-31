@@ -19,11 +19,11 @@ const toggleMenu = (event: Event) => {
     <nav class="mb-4 sticky top-0 z-10">
         <Menubar class="navbar">
             <template #start>
-                <a href="/" class="flex items-center">
+                <RouterLink to="/" class="flex items-center">
                     <Image src="/images/raditz_dbz.png" alt="logo" width="50" />
                     <h1 style="font-size: xx-large; font-weight: bold">Raddit</h1>
                     <Image src="/images/dbz_letter_z_logo.png" alt="logo" width="40" class="img-logo" />
-                </a>
+                </RouterLink>
             </template>
             <template #end>
                 <div v-if="!auth.isAuthenticated.value" class="flex items-center">
