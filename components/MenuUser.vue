@@ -2,9 +2,11 @@
 import {ref} from "vue";
 import {useAuth} from "~/composables/useAuth";
 import {useDialogUserProfile} from "~/composables/useDialogUserProfile";
+import {useRouter} from "vue-router";
 
 const dialogUserProfile = useDialogUserProfile()
 const auth = useAuth();
+const router = useRouter();
 
 const menu = ref();
 const items = ref([
@@ -30,10 +32,16 @@ const items = ref([
             {
                 label: 'Utilisateurs',
                 icon: 'pi pi-users',
+                command: () => {
+                    router.push('/admin');
+                }
             },
             {
                 label: 'Forums',
                 icon: 'pi pi-book',
+                command: () => {
+                    router.push('/admin');
+                }
             }
         ],
     }
