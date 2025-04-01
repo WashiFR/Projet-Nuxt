@@ -30,15 +30,8 @@ const items = ref([
         label: 'Administration',
         items: [
             {
-                label: 'Utilisateurs',
-                icon: 'pi pi-users',
-                command: () => {
-                    router.push('/admin');
-                }
-            },
-            {
-                label: 'Forums',
-                icon: 'pi pi-book',
+                label: 'Tableau de bord',
+                icon: 'pi pi-chart-bar',
                 command: () => {
                     router.push('/admin');
                 }
