@@ -19,7 +19,7 @@ const toggleMenu = (event: Event) => {
     <nav class="mb-4 sticky top-0 z-10">
         <Menubar class="navbar">
             <template #start>
-                <RouterLink to="/" class="flex items-center">
+                <RouterLink to="/" v-tooltip="{ value: 'Retour à l\'accueil', showDelay: 500, hideDelay: 200 }" class="flex items-center">
                     <Image src="/images/raditz_dbz.png" alt="logo" width="50" />
                     <h1 style="font-size: xx-large; font-weight: bold">Raddit</h1>
                     <Image src="/images/dbz_letter_z_logo.png" alt="logo" width="40" class="img-logo" />
@@ -31,10 +31,10 @@ const toggleMenu = (event: Event) => {
                 </div>
                 <div v-else class="flex items-center">
                     <div class="flex items-center gap-2">
-                        <Button label="Sujet" icon="pi pi-plus" variant="text" severity="secondary" rounded />
+                        <Button label="Sujet" icon="pi pi-plus" variant="text" severity="secondary" rounded v-tooltip.bottom="{ value: 'Nouveau sujet', showDelay: 500, hideDelay: 200 }" />
                     </div>
                     <Divider layout="vertical" />
-                    <Button variant="text" severity="secondary" rounded class="btn-avatar" @click="toggleMenu">
+                    <Button variant="text" severity="secondary" rounded class="btn-avatar" @click="toggleMenu" v-tooltip.bottom="{ value: 'Menu du profil', showDelay: 500, hideDelay: 200 }" >
                         <Avatar icon="pi pi-user" shape="circle" />
                     </Button>
 

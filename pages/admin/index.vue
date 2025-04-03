@@ -16,11 +16,11 @@ const users = ref([
 ])
 
 const forums = ref([
-    { name: 'Forum 1', description: 'Description du forum 1', nbSubjects: 10, isLocked: false },
-    { name: 'Forum 2', description: 'Description du forum 2', nbSubjects: 5, isLocked: true },
-    { name: 'Forum 3', description: 'Description du forum 3', nbSubjects: 20, isLocked: false },
-    { name: 'Forum 4', description: 'Description du forum 4', nbSubjects: 0, isLocked: true },
-    { name: 'Forum 5', description: 'Description du forum 5', nbSubjects: 15, isLocked: false }
+    { name: 'Forum 1', description: 'Description du forum 1', nbSubjects: 10 },
+    { name: 'Forum 2', description: 'Description du forum 2', nbSubjects: 5 },
+    { name: 'Forum 3', description: 'Description du forum 3', nbSubjects: 20 },
+    { name: 'Forum 4', description: 'Description du forum 4', nbSubjects: 0 },
+    { name: 'Forum 5', description: 'Description du forum 5', nbSubjects: 15 }
 ])
 </script>
 
@@ -40,7 +40,7 @@ const forums = ref([
                 <template #header>
                     <div class="flex justify-between align-items-center">
                         <h5 class="m-0">Liste des utilisateurs</h5>
-                        <Button icon="pi pi-plus" label="Utilisateur" severity="primary" size="small" />
+                        <Button icon="pi pi-plus" label="Admin" severity="primary" size="small" />
                     </div>
                 </template>
                 <Column field="name" header="Nom">
@@ -71,8 +71,6 @@ const forums = ref([
                 <Column field="nbSubjects" header="Nombre de sujets"></Column>
                 <Column>
                     <template #body="slotProps">
-                        <Button v-if="slotProps.data.isLocked" icon="pi pi-lock" rounded severity="contrast" class="mr-2" />
-                        <Button v-else icon="pi pi-lock-open" outlined rounded severity="secondary" class="mr-2" />
                         <Button icon="pi pi-pencil" outlined rounded class="mr-2" />
                         <Button icon="pi pi-trash" outlined rounded severity="danger" />
                     </template>
