@@ -25,8 +25,8 @@ const forums = ref([
 </script>
 
 <template>
-	<main class="flex flex-col items-center grow">
-		<h2>Tableau de bord</h2>
+	<main class="flex flex-col items-center grow gap-4">
+		<h2 class="text-5xl font-bold">Tableau de bord</h2>
 
 		<SelectButton v-model="optionsChoosed" :options="options">
 			<template #option="slotProps">
@@ -38,8 +38,8 @@ const forums = ref([
 		<div v-if="optionsChoosed.value === 'users'">
 			<DataTable :value="users" table-style="min-width: 50rem">
 				<template #header>
-					<div class="flex justify-between align-items-center">
-						<h5 class="m-0">Liste des utilisateurs</h5>
+					<div class="flex justify-between items-end">
+						<h5 class="m-0 text-2xl font-bold">Liste des utilisateurs</h5>
 						<Button
 							icon="pi pi-plus"
 							label="Admin"
@@ -77,8 +77,8 @@ const forums = ref([
 		<div v-else>
 			<DataTable :value="forums" table-style="min-width: 50rem">
 				<template #header>
-					<div class="flex justify-between align-items-center">
-						<h5 class="m-0">Liste des forums</h5>
+					<div class="flex justify-between items-end">
+						<h5 class="m-0 text-2xl font-bold">Liste des forums</h5>
 						<Button
 							icon="pi pi-plus"
 							label="Forum"
