@@ -1,5 +1,28 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useConfirm } from "primevue/useconfirm";
+
+const confirm = useConfirm();
+
+const confirmDelete = (event, forumName: string) => {
+    confirm.require({
+        target: event.currentTarget,
+        message: 'Voulez-vous supprimer ce forum ?',
+        icon: 'pi pi-exclamation-triangle',
+        rejectProps: {
+            label: 'Non',
+            severity: 'secondary',
+            outlined: true
+        },
+        acceptProps: {
+            label: 'Oui',
+            severity: 'danger'
+        },
+        accept: () => {
+            removeForum(forumName)
+        },
+    });
+};
 
 const options = ref([
 	{ label: 'Utilisateurs', icon: 'pi pi-user', value: 'users' },
@@ -22,6 +45,10 @@ const forums = ref([
 	{ name: 'Forum 4', description: 'Description du forum 4', nbSubjects: 0 },
 	{ name: 'Forum 5', description: 'Description du forum 5', nbSubjects: 15 },
 ]);
+
+function removeForum(forumName: string) {
+    forums.value = forums.value.filter((f) => f.name !== forumName);
+}
 </script>
 
 <template>
@@ -98,11 +125,13 @@ const forums = ref([
 							rounded
 							class="mr-2"
 						/>
+                        <ConfirmPopup/>
 						<Button
 							icon="pi pi-trash"
 							outlined
 							rounded
 							severity="danger"
+                            @click="confirmDelete($event, slotProps.data.name)"
 						/>
 					</template>
 				</Column>

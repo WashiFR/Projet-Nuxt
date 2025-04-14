@@ -22,7 +22,7 @@ function nameToSlug(name: string) {
 					alt="forum header"
 					src="/images/usercard.jpg"
 					class="h-[125px] w-full object-cover"
-				/>
+				>
 			</template>
 			<template #title>{{ name }}</template>
 			<template #content>

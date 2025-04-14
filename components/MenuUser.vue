@@ -10,6 +10,9 @@ const router = useRouter();
 
 const menu = ref();
 const items = ref([
+    {
+        separator: true,
+    },
 	{
 		label: 'Mon compte',
 		items: [
@@ -57,7 +60,6 @@ defineExpose({ menu }); // Permet à la Navbar de contrôler le menu
 					<p class="text-xs">Admin</p>
 				</div>
 			</div>
-			<Divider class="!m-0" layout="horizontal" />
 		</template>
 	</Menu>
 </template>
