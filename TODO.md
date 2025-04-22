@@ -2,28 +2,28 @@
 
 - [x] Installation de Nuxt.js
 - [x] Installation de PrimeVue
-- [ ] Installation de serveur Nuxt
-- [ ] Installation de WebSocket
-- [ ] Création de la base de données MySQL
-- [ ] Création du fichier `docker-compose.yml`
+- [x] Installation de serveur Nuxt
+- [x] Installation de WebSocket
+- [x] Création de la base de données MySQL
+- [x] Création du fichier `docker-compose.yml`
 
 # Fonctionnalités principales
 
 - [ ] Actualisation en temps réel des sujets et des messages
-- [ ] Création de la bd MySQL au démarrage
+- [x] Création de la bd MySQL au démarrage
 - [ ] Création d'un compte `admin` au démarrage
 
 ## Pages
 
-- [ ] Page d'accueil (liste des forums avec nombre de sujets)
+- [x] Page d'accueil (liste des forums avec nombre de sujets)
 
 ### Sujets
 
-- [ ] Page d'un forum (liste des sujets)
+- [x] Page d'un forum (liste des sujets)
 - [ ] Afficher les sujets par date de dernier message décroissant
-- [ ] Afficher auteur + date création + auteur du dernier message
+- [x] Afficher auteur + date création + auteur du dernier message
 - [ ] Bouton pour créer un nouveau sujet (titre + message), doit être connecté
-- [ ] Pagination des sujets (20 par page)
+- [x] Pagination des sujets (20 par page)
 - [ ] Bouton pour supprimer un sujet et ses messages (si admin)
 
 ### Messages
@@ -39,15 +39,15 @@
 
 ### Administration
 
-- [ ] Page d'administration
+- [x] Page d'administration
 - [ ] Créer un nouveau compte administrateur
 - [ ] Créer, modifier, supprimer un forum (supprime les sujets et messages associés)
 
 ## Authentification
 
-- [ ] Authentification
+- [x] Authentification
 - [ ] Compte administrateur
-- [ ] Déconnexion
+- [x] Déconnexion
 - [ ] Changer de mot de passe
 
 # Bonus
