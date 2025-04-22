@@ -1,5 +1,16 @@
 <script setup lang="ts">
-const name = 'Nom du forum';
+interface Forum {
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+    created_at: string;
+    subjectCount: number;
+}
+
+const props = defineProps<{
+    forum: Forum;
+}>()
 
 /**
  * Convertit un nom en slug pour l'URL
@@ -15,7 +26,7 @@ function nameToSlug(name: string) {
 </script>
 
 <template>
-	<NuxtLink :to="`/forums/${nameToSlug(name)}`" class="forum-card">
+	<NuxtLink :to="`/forums/${nameToSlug(props.forum.name)}`" class="forum-card">
 		<Card style="width: 20rem; overflow: hidden">
 			<template #header>
 				<img
@@ -24,18 +35,16 @@ function nameToSlug(name: string) {
 					class="h-[125px] w-full object-cover"
 				>
 			</template>
-			<template #title>{{ name }}</template>
+			<template #title>{{ props.forum.name }}</template>
 			<template #content>
 				<p class="m-0 text-sm">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Inventore sed consequuntur error repudiandae numquam
-					deserunt quisquam repellat libero asperiores earum nam nobis
+					{{ props.forum.description }}
 				</p>
 			</template>
 			<template #footer>
 				<Divider />
 				<div class="flex items-center justify-between text-xs">
-					<p>15 sujets</p>
+					<p>{{ props.forum.subjectCount }} sujets</p>
 				</div>
 			</template>
 		</Card>
