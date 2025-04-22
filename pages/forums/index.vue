@@ -1,19 +1,17 @@
 <script setup lang="ts">
-import CardForum from '~/components/CardForum.vue';
+import CardForum from '~/components/CardForum.vue'
 
-const {
-    data: forumsResponse
-} = await useFetch('/api/forums');
+const { data: forumsResponse } = await useFetch('/api/forums')
 
-const forums = computed(() => forumsResponse.value || []);
+const forums = computed(() => forumsResponse.value || [])
 
-const itemsPerPage = 1;
-const currentPage = ref(1);
+const itemsPerPage = 1
+const currentPage = ref(1)
 
 const paginatedForums = computed(() => {
-    const start = (currentPage.value - 1) * itemsPerPage;
-    return forums.value.slice(start, start + itemsPerPage);
-});
+    const start = (currentPage.value - 1) * itemsPerPage
+    return forums.value.slice(start, start + itemsPerPage)
+})
 </script>
 
 <template>
@@ -25,7 +23,7 @@ const paginatedForums = computed(() => {
             :rows="itemsPerPage"
             :totalRecords="forums.length"
             :first="(currentPage - 1) * itemsPerPage"
-            @page="(e) => currentPage = e.page + 1"
+            @page="(e) => (currentPage = e.page + 1)"
             class="paginator"
         />
     </main>
@@ -35,6 +33,6 @@ const paginatedForums = computed(() => {
 @reference "tailwindcss/theme";
 
 :deep(.paginator) {
-	@apply mt-4;
+    @apply mt-4;
 }
 </style>

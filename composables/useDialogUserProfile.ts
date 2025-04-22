@@ -1,28 +1,28 @@
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 // Singleton
-let instance: any = null;
+let instance: any = null
 
 export function useDialogUserProfile() {
-	if (instance) {
-		return instance;
-	}
+    if (instance) {
+        return instance
+    }
 
-	const dialogVisible = ref(false);
+    const dialogVisible = ref(false)
 
-	function openDialog() {
-		dialogVisible.value = true;
-	}
+    function openDialog() {
+        dialogVisible.value = true
+    }
 
-	function closeDialog() {
-		dialogVisible.value = false;
-	}
+    function closeDialog() {
+        dialogVisible.value = false
+    }
 
-	instance = {
-		dialogVisible,
-		openDialog,
-		closeDialog,
-	};
+    instance = {
+        dialogVisible,
+        openDialog,
+        closeDialog
+    }
 
-	return instance;
+    return instance
 }

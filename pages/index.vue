@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { navigateTo } from '#app';
+import { navigateTo } from '#app'
 
-navigateTo('/forums');
+navigateTo('/forums')
 </script>
 
 <template></template>

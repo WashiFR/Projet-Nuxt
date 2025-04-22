@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import TheNavbar from '~/components/TheNavbar.vue';
-import TheFooter from '~/components/TheFooter.vue';
-import GlobalDialogLogin from '~/components/GlobalDialogLogin.vue';
-import GlobalDialogUserProfile from '~/components/GlobalDialogUserProfile.vue';
+import TheNavbar from '~/components/TheNavbar.vue'
+import TheFooter from '~/components/TheFooter.vue'
+import GlobalDialogLogin from '~/components/GlobalDialogLogin.vue'
+import GlobalDialogUserProfile from '~/components/GlobalDialogUserProfile.vue'
 </script>
 
 <template>
-	<div class="flex flex-col min-h-screen">
-		<TheNavbar />
+    <div class="flex flex-col min-h-screen">
+        <TheNavbar />
 
-		<!-- Main content -->
-		<NuxtPage />
+        <!-- Main content -->
+        <NuxtPage />
 
-		<TheFooter />
+        <TheFooter />
 
-		<!-- Globals Components -->
-		<GlobalDialogLogin />
-		<GlobalDialogUserProfile />
-	</div>
+        <!-- Globals Components -->
+        <GlobalDialogLogin />
+        <GlobalDialogUserProfile />
+    </div>
 </template>
