@@ -24,7 +24,7 @@
 - [x] Afficher auteur + date création + auteur du dernier message
 - [ ] Bouton pour créer un nouveau sujet (titre + message), doit être connecté
 - [x] Pagination des sujets (20 par page)
-- [ ] Bouton pour supprimer un sujet et ses messages (si admin)
+- [ ] Bouton pour supprimer un sujet et ses messages (si admin // ajouter colonne dans sujets pour cacher ou non modifier les api en fonctions)
 
 ### Messages
 
