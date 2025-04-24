@@ -11,7 +11,7 @@
 
 - [ ] Actualisation en temps réel des sujets et des messages
 - [x] Création de la bd MySQL au démarrage
-- [ ] Création d'un compte `admin` au démarrage
+- [x] Création d'un compte `admin` au démarrage
 
 ## Pages
 

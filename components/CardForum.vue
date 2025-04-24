@@ -4,7 +4,7 @@ interface Forum {
     name: string
     description: string
     image: string
-    created_at: string
+    creation_date: string
     subjectCount: number
 }
 
@@ -26,7 +26,7 @@ function nameToSlug(name: string) {
 </script>
 
 <template>
-    <NuxtLink :to="`/forums/${nameToSlug(props.forum.name)}`" class="forum-card">
+    <NuxtLink :to="`/forums/${props.forum.id}`" class="forum-card">
         <Card style="width: 20rem; overflow: hidden">
             <template #header>
                 <img

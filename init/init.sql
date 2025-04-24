@@ -41,3 +41,9 @@ CREATE TABLE messages (
     FOREIGN KEY (id_subject) REFERENCES subjects(id) ON DELETE CASCADE,
     FOREIGN KEY (id_author) REFERENCES users(id) ON DELETE CASCADE
 );
+
+-- Insertion des utilisateurs
+INSERT INTO users (id, role, username, email, password, avatar)
+VALUES
+    ('550e8400-e29b-41d4-a716-446655440000', 1, 'admin', 'admin@example.com', '$2y$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa', ''), -- mot de passe: password
+    ('550e8400-e29b-41d4-a716-446655440001', 0, 'user', 'user@example.com', '$2y$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa', ''); -- mot de passe: password
