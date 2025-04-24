@@ -28,12 +28,12 @@
 
 ### Messages
 
-- [ ] Page d'un sujet de forum (liste des messages)
-- [ ] Afficher le message initial en haut
+- [x] Page d'un sujet de forum (liste des messages)
+- [x] Afficher le message initial en haut
 - [ ] Afficher les messages par date de création croissante
-- [ ] Afficher nom utilisateur + date création
+- [x] Afficher nom utilisateur + date création
 - [ ] Bouton pour répondre à un sujet (message), doit être connecté
-- [ ] Pagination des messages (20 par page)
+- [x] Pagination des messages (20 par page)
 - [ ] Bouton pour modifier son message (si auteur ou admin)
 - [ ] Bouton pour supprimer message (si admin)
 
