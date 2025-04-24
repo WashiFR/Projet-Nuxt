@@ -46,7 +46,7 @@
 ## Authentification
 
 - [x] Authentification
-- [ ] Compte administrateur
+- [x] Compte administrateur
 - [x] Déconnexion
 - [ ] Changer de mot de passe
 
