@@ -9,7 +9,7 @@ const { data: subjectsResponse } = await useFetch(`/api/forums/${forumId}/topics
 
 const subjects = computed(() => subjectsResponse.value || [])
 
-const itemsPerPage = 1
+const itemsPerPage = 20
 const currentPage = ref(1)
 
 const paginatedSubjects = computed(() => {
