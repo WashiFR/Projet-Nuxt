@@ -15,6 +15,9 @@ const props = defineProps<{
     forumId?: number
 }>()
 
+const { data: authorData, pending, error } = await useAsyncData(`author-${props.subject.id_author}`, () =>
+    $fetch(`/api/users/user?id=${props.subject.id_author}`)
+)
 </script>
 
 <template>
@@ -24,7 +27,9 @@ const props = defineProps<{
                 <div class="flex justify-between items-center w-full">
                     <div class="flex items-center gap-2">
                         <Avatar icon="pi pi-user" shape="circle" class="!min-w-[32px]" />
-                        <span class="font-bold">Jhon Doe</span>
+                        <span class="font-bold">
+                            {{ pending ? 'Chargement...' : authorData?.username || 'Inconnu' }}
+                        </span>
                     </div>
                     <span class="text-xs">
                         {{ new Date(props.subject.creation_date).toLocaleDateString('fr-FR') }}
@@ -45,11 +50,13 @@ const props = defineProps<{
             <div class="flex justify-between items-center w-full">
                 <div class="flex items-center gap-2">
                     <Avatar icon="pi pi-user" shape="circle" class="!min-w-[32px]" />
-                    <span class="font-bold">Jhon Doe</span>
+                    <span class="font-bold">
+                        {{ pending ? 'Chargement...' : authorData?.username || 'Inconnu' }}
+                    </span>
                 </div>
                 <span class="text-xs">
-                        {{ new Date(props.subject.creation_date).toLocaleDateString('fr-FR') }}
-                    </span>
+                    {{ new Date(props.subject.creation_date).toLocaleDateString('fr-FR') }}
+                </span>
             </div>
         </template>
         <h3 class="text-2xl mb-2">

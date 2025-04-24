@@ -21,14 +21,14 @@ const paginatedSubjects = computed(() => {
 <template>
     <main class="flex flex-col items-center grow">
         <div class="flex flex-col items-center gap-4 max-w-3xl">
-            <PanelSubject v-for="subject in paginatedSubjects" :key="subject.id" :subject="subject" :forumId="forumId" />
+            <PanelSubject v-for="subject in paginatedSubjects" :key="subject.id" :subject="subject" :forum-id="parseInt(forumId)" />
         </div>
         <Paginator
             :rows="itemsPerPage"
-            :totalRecords="subjects.length"
+            :total-records="subjects.length"
             :first="(currentPage - 1) * itemsPerPage"
-            @page="(e) => (currentPage = e.page + 1)"
             class="paginator"
+            @page="(e) => (currentPage = e.page + 1)"
         />
     </main>
 </template>
