@@ -20,7 +20,7 @@
 ### Sujets
 
 - [x] Page d'un forum (liste des sujets)
-- [ ] Afficher les sujets par date de dernier message décroissant
+- [x] Afficher les sujets par date de dernier message décroissant
 - [x] Afficher auteur + date création + auteur du dernier message
 - [ ] Bouton pour créer un nouveau sujet (titre + message), doit être connecté
 - [x] Pagination des sujets (20 par page)
@@ -30,7 +30,7 @@
 
 - [x] Page d'un sujet de forum (liste des messages)
 - [x] Afficher le message initial en haut
-- [ ] Afficher les messages par date de création croissante
+- [x] Afficher les messages par date de création croissante
 - [x] Afficher nom utilisateur + date création
 - [ ] Bouton pour répondre à un sujet (message), doit être connecté
 - [x] Pagination des messages (20 par page)
