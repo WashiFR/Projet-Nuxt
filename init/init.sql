@@ -51,7 +51,7 @@ CREATE TABLE messages (
 -- Insertion des utilisateurs
 INSERT INTO users (id, role, username, email, password, avatar) VALUES
 ('550e8400-e29b-41d4-a716-446655440000', 1, 'admin', 'admin@example.com', '$2y$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa', ''),
-('550e8400-e29b-41d4-a716-446655440001', 0, 'user', 'user@example.com', '$2y$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa', ''),
+('550e8400-e29b-41d4-a716-446655440001', 0, 'user', 'user@example.com', 'password', ''),
 ('550e8400-e29b-41d4-a716-446655440002', 0, 'johndoe', 'john@example.com', '$2y$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa', 'https://example.com/avatar1.png'),
 ('550e8400-e29b-41d4-a716-446655440003', 0, 'janedoe', 'jane@example.com', '$2y$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa', 'https://example.com/avatar2.png'),
 ('550e8400-e29b-41d4-a716-446655440004', 0, 'gamer42', 'gamer@example.com', '$2y$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa', 'https://example.com/avatar3.png'),

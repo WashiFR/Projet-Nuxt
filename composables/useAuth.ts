@@ -4,25 +4,23 @@ import { ref } from 'vue'
 let instance: any = null
 
 export function useAuth() {
-    if (instance) {
-        return instance
-    }
+  if (instance) return instance
 
-    const isAuthenticated = ref(false)
+  // Nouveau : on stocke l'ID de l'utilisateur ici
+  const userId = ref<number | null>(null)
+  const isAuthenticated = ref(false)
 
-    function login() {
-        isAuthenticated.value = true
-    }
+  // login reçoit désormais le payload { userId, ... }
+  function login(payload: { userId: number; [key: string]: any }) {
+    userId.value = payload.userId
+    isAuthenticated.value = true
+  }
 
-    function logout() {
-        isAuthenticated.value = false
-    }
+  function logout() {
+    userId.value = null
+    isAuthenticated.value = false
+  }
 
-    instance = {
-        isAuthenticated,
-        login,
-        logout
-    }
-
-    return instance
+  instance = { userId, isAuthenticated, login, logout }
+  return instance
 }
