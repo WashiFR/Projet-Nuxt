@@ -22,7 +22,7 @@
 - [x] Page d'un forum (liste des sujets)
 - [x] Afficher les sujets par date de dernier message décroissant
 - [x] Afficher auteur + date création + auteur du dernier message
-- [ ] Bouton pour créer un nouveau sujet (titre + message), doit être connecté
+- [x] Bouton pour créer un nouveau sujet (titre + message), doit être connecté
 - [x] Pagination des sujets (20 par page)
 - [ ] Bouton pour supprimer un sujet et ses messages (si admin // ajouter colonne dans sujets pour cacher ou non modifier les api en fonctions)
 
@@ -32,7 +32,7 @@
 - [x] Afficher le message initial en haut
 - [x] Afficher les messages par date de création croissante
 - [x] Afficher nom utilisateur + date création
-- [ ] Bouton pour répondre à un sujet (message), doit être connecté
+- [ ] Bouton pour répondre à un sujet (message), doit être connecté // PRIORITAIRE
 - [x] Pagination des messages (20 par page)
 - [ ] Bouton pour modifier son message (si auteur ou admin)
 - [ ] Bouton pour supprimer message (si admin)
@@ -41,7 +41,7 @@
 
 - [x] Page d'administration
 - [ ] Créer un nouveau compte administrateur
-- [ ] Créer, modifier, supprimer un forum (supprime les sujets et messages associés)
+- [ ] Créer, modifier, supprimer un forum (supprime les sujets et messages associés) // PRIORITAIRE
 
 ## Authentification
 
