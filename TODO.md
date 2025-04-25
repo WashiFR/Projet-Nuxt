@@ -32,7 +32,7 @@
 - [x] Afficher le message initial en haut
 - [x] Afficher les messages par date de création croissante
 - [x] Afficher nom utilisateur + date création
-- [ ] Bouton pour répondre à un sujet (message), doit être connecté // PRIORITAIRE
+- [ ] Bouton pour répondre à un sujet (message), doit être connecté
 - [x] Pagination des messages (20 par page)
 - [ ] Bouton pour modifier son message (si auteur ou admin)
 - [ ] Bouton pour supprimer message (si admin)
