@@ -71,17 +71,11 @@ function removeForum(forumName: string) {
   forums.value = forums.value.filter(f => f.name !== forumName)
 }
 
-// Initialisation
-onMounted(() => {
-  if (selectedOption.value === 'users') fetchUsers()
-  else fetchForums()
-})
-
 // Changement de vue
 watch(selectedOption, (val) => {
   if (val === 'users') fetchUsers()
   else fetchForums()
-})
+}, { immediate: true })
 </script>
 
 <template>
